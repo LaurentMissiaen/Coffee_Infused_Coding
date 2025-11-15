@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Barlow Semi Condensed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home - Coffee Infused Coding</title>
+  </head>
+  <body>
+    <nav class="navbar" id="top">
+      <div class="nav_content">
+        <span class="logo"
+          ><a href="index.html"
+            ><span>coffee</span><span>infused</span><span>coding</span></a
+          ></span
+        >
+        <button
+          class="hamburger"
+          aria-label="toggle menu"
+          aria-expanded="false"
+          aria-controls="nav_list"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav_list" id="nav_list">
+          <li class="nav_item"><a href="brew_guides.html">guides</a></li>
+          <li class="nav_item"><a href="tools.html">tools</a></li>
+          <li class="nav_item">spots</li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <a class="to-top" href="#top" aria-label="back tot top"
+        ><img
+          id="top_arrow"
+          src="Images/icons_imgs/up-arrow.png"
+          alt="up arrow"
+      /></a>
+      <section class="hero full-width">
+        <h1>
+          want to make <br />
+          better coffee?
+        </h1>
+        <div class="hero__info">
+          <img src="Images/home/home_larry.jpeg" alt="larry drinks coffee" />
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nulla
+            ea repudiandae. Esse optio consequatur assumenda adipisci ut natus
+            tempora earum voluptas. Quas quasi repudiandae asperiores cupiditate
+            accusamus magni ipsam!
+            <button class="btn shadow__subtle">contacteer me</button>
+          </p>
+        </div>
+      </section>
+      <section class="services full-width">
+        <h2>we provide<span id="img"></span></h2>
+        <div class="services__links">
+          <a href="brew_guides.html" class="services__links__item shadow"
+            ><img src="Images/home/guides_icon.png" alt="guidebook" />guides</a
+          >
+          <a href="tools.html" class="services__links__item shadow"
+            ><img src="Images/home/tools_icon.png" alt="tools" />tools</a
+          >
+          <a href="" class="services__links__item shadow"
+            ><img src="Images/home/spots_icon.png" alt="spots" />spots</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 - coffee infused coding, All Rights Reserved</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Barlow Semi Condensed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tools</title>
+  </head>
+  <body>
+    <nav class="navbar" id="top">
+      <div class="nav_content">
+        <span class="logo"
+          ><a href="index.html"
+            ><span>coffee</span><span>infused</span><span>coding</span></a
+          ></span
+        >
+        <button
+          class="hamburger"
+          aria-label="toggle menu"
+          aria-expanded="false"
+          aria-controls="nav_list"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav_list" id="nav_list">
+          <li class="nav_item"><a href="brew_guides.html">guides</a></li>
+          <li class="nav_item"><a href="tools.html">tools</a></li>
+          <li class="nav_item">spots</li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <a class="to-top" href="#top" aria-label="back tot top"
+        ><img
+          id="top_arrow"
+          src="Images/icons_imgs/up-arrow.png"
+          alt="up arrow"
+      /></a>
+      <section>
+        <div class="calculator">
+          <h1>Coffee Ratio Calculator</h1>
+
+          <div class="input__grid">
+            <div class="input__grid__item">
+              <label for="method">Brewing Method:</label>
+              <select id="method">
+                <option value="pourOver">Pour Over</option>
+                <option value="frenchPress">French Press</option>
+                <option value="aeropress">AeroPress</option>
+              </select>
+            </div>
+
+            <div class="input__grid__item">
+              <label for="cups">Number of Cups:</label>
+              <input type="number" id="cups" min="1" value="2" />
+            </div>
+
+            <div class="input__grid__item">
+              <label for="strength">Strength:</label>
+              <select id="strength">
+                <option value="mild">Mild</option>
+                <option value="medium" selected>Medium</option>
+                <option value="strong">Strong</option>
+              </select>
+            </div>
+
+            <div class="input__grid__item">
+              <label for="roast">Roast Level:</label>
+              <select id="roast">
+                <option value="light">Light</option>
+                <option value="medium" selected>Medium</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+          </div>
+          <div class="result" id="result">
+            <h2>
+              Recipe
+              <img id="brewImg" class="brewImg" src="" alt="brewing method" />
+            </h2>
+            <p><span>Ground coffee:</span><span id="coffee-amount">–</span></p>
+
+            <p><span>Water:</span><span id="water-amount">–</span></p>
+            <p><span>Grind size:</span><span id="grind-size">–</span></p>
+            <p><span>Brew time:</span><span id="brew-time">–</span></p>
+            <p><span>Water temperature:</span><span id="water-temp">–</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 - coffee infused coding, All Rights Reserved</p>
+    </footer>
+    <script src="app.js"></script>
+    <script src="brew_ratio_calculator.js"></script>
+  </body>
+</html>
