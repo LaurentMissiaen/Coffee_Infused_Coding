@@ -14,7 +14,6 @@ const tinySip = document.getElementById("tinySip");
 const rushBody = document.getElementById("rushBody");
 const mediumBody = document.getElementById("mediumBody");
 const heavyBody = document.getElementById("heavyBody");
-const restartBtn = document.getElementById("restartBtn");
 
 function answerDiv(brewmethod) {
   let div = document.createElement("div");
@@ -25,16 +24,8 @@ function answerDiv(brewmethod) {
   coffeeQuiz.appendChild(div);
 }
 
-function deleteAnswer() {
-  coffeeQuiz.removeChild("answerDiv");
-}
-
-restartBtn.addEventListener("click", () => {
-  rushQ.style.display = "block";
-});
-
 function quizFlow() {
-  rushQ.addEventListener("click", () => {
+  answerDiv.innerHTML = rushQ.addEventListener("click", () => {
     if (rushYes.checked === true) {
       rushQ.style.display = "none";
       milkyQ.style.display = "block";
@@ -79,7 +70,6 @@ function quizFlow() {
       answerDiv("long black");
     }
   });
-  deleteAnswer();
 }
 
 document.onload(quizFlow());
