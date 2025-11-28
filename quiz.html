@@ -6,6 +6,70 @@
     <title>Document</title>
   </head>
   <body>
+    <section id="coffeeQuiz">
+      <h2>Coffee Quiz</h2>
+      <div id="rushQ">
+        <h3>Question:</h3>
+        <p>Are you in a rush?</p>
+        <label>
+          <input type="radio" name="radio" id="rushYes" />
+          yes
+        </label>
+        <label>
+          <input type="radio" name="radio" id="rushNo" />
+          no
+        </label>
+      </div>
+      <div id="milkyQ" style="display: none">
+        <h3>Question:</h3>
+        <p>Would you like a milky drink (e.g. cappuccino, flat white)?</p>
+        <label>
+          <input type="radio" name="radio" id="milkYes" />
+          yes please!
+        </label>
+        <label>
+          <input type="radio" name="radio" id="milkNo" />
+          nope, I'm way too cool for milky drinks!
+        </label>
+      </div>
+      <div id="filterBodyQ" style="display: none">
+        <h3>Question:</h3>
+        <p>Light body or heavy body (talking about coffee, ya weirdo!)</p>
+        <label>
+          <input type="radio" name="radio" id="filterLight" />
+          Put it lightly!
+        </label>
+        <label>
+          <input type="radio" name="radio" id="filterHeavy" />
+          I like it heavy!
+        </label>
+      </div>
+      <div id="drinkSizeQ" style="display: none">
+        <h3>Question:</h3>
+        <p>Full cup or tiny sip?</p>
+        <label>
+          <input type="radio" name="radio" id="fullCup" />
+          Full cup please!
+        </label>
+        <label>
+          <input type="radio" name="radio" id="tinySip" />
+          Remember, in a rush! Tiny sip please!
+        </label>
+      </div>
+      <div id="rushBody" style="display: none">
+        <h3>Question:</h3>
+        <p>Medium or Heavy body?</p>
+        <label>
+          <input type="radio" name="radio" id="mediumBody" />
+          Medium body
+        </label>
+        <label>
+          <input type="radio" name="radio" id="heavyBody" />
+          Heavy body
+        </label>
+      </div>
+    </section>
+    <button id="restartBtn">restart quiz</button>
     <script src="coffee_quiz.js"></script>
   </body>
 </html>
