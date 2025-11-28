@@ -14,18 +14,22 @@ const tinySip = document.getElementById("tinySip");
 const rushBody = document.getElementById("rushBody");
 const mediumBody = document.getElementById("mediumBody");
 const heavyBody = document.getElementById("heavyBody");
+const quizDiv = document.getElementById("questions");
+const restartBtn = document.getElementById("restartBtn");
+
+//this seems like a lot, logic can be simplified so you don't need that many id's
 
 function answerDiv(brewmethod) {
-  let div = document.createElement("div");
-  div.setAttribute("id", "answerDiv");
-  let content = document.createElement("p");
-  content.innerHTML = `Your brewmethod is: ${brewmethod}!`;
-  div.appendChild(content);
-  coffeeQuiz.appendChild(div);
+  document.getElementById(
+    "answer"
+  ).innerHTML = `Your brewmethod is: ${brewmethod}!`;
+  document.getElementById("answer").style.display = "block";
 }
 
+//good function! adding back the display "block", seems to work together with restart func
+
 function quizFlow() {
-  answerDiv.innerHTML = rushQ.addEventListener("click", () => {
+  rushQ.addEventListener("click", () => {
     if (rushYes.checked === true) {
       rushQ.style.display = "none";
       milkyQ.style.display = "block";
@@ -72,4 +76,9 @@ function quizFlow() {
   });
 }
 
-document.onload(quizFlow());
+restartBtn.addEventListener("click", () => {
+  document.getElementById("answer").style.display = "none";
+  document.getElementById("rushQ").style.display = "block";
+});
+
+document.addEventListener("load", quizFlow());
