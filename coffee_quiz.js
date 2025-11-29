@@ -11,22 +11,29 @@ const filterHeavy = document.getElementById("filterHeavy");
 const drinkSizeQ = document.getElementById("drinkSizeQ");
 const fullCup = document.getElementById("fullCup");
 const tinySip = document.getElementById("tinySip");
-const rushBody = document.getElementById("rushBody");
-const mediumBody = document.getElementById("mediumBody");
-const heavyBody = document.getElementById("heavyBody");
-const quizDiv = document.getElementById("questions");
+const fastBodyQ = document.getElementById("fastBodyQ");
+const fastMedium = document.getElementById("fastMedium");
+const fastHeavy = document.getElementById("fastHeavy");
 const restartBtn = document.getElementById("restartBtn");
 
-//this seems like a lot, logic can be simplified so you don't need that many id's
+//function uses string parameter to display answer with correct brewmethod:
 
-function answerDiv(brewmethod) {
+function showAnswer(brewmethod) {
   document.getElementById(
     "answer"
   ).innerHTML = `Your brewmethod is: ${brewmethod}!`;
-  document.getElementById("answer").style.display = "block";
+  document.getElementById("answerDiv").style.display = "block";
 }
 
-//good function! adding back the display "block", seems to work together with restart func
+//function restarts quiz so answer gets removed and first question shows:
+
+restartBtn.addEventListener("click", () => {
+  document.getElementById("answerDiv").style.display = "none";
+  document.getElementById("rushQ").style.display = "block";
+});
+
+//function uses click event listeners to hide and show questions or display answers,
+//depending on user input:
 
 function quizFlow() {
   rushQ.addEventListener("click", () => {
@@ -41,16 +48,16 @@ function quizFlow() {
   filterBodyQ.addEventListener("click", () => {
     if (filterLight.checked === true) {
       filterBodyQ.style.display = "none";
-      answerDiv("pour over");
+      showAnswer("pour over");
     } else if (filterHeavy.checked === true) {
       filterBodyQ.style.display = "none";
-      answerDiv("french press");
+      showAnswer("french press");
     }
   });
   milkyQ.addEventListener("click", () => {
     if (milkYes.checked === true) {
       milkyQ.style.display = "none";
-      answerDiv("espresso");
+      showAnswer("espresso");
     } else if (milkNo.checked === true) {
       milkyQ.style.display = "none";
       drinkSizeQ.style.display = "block";
@@ -59,26 +66,23 @@ function quizFlow() {
   drinkSizeQ.addEventListener("click", () => {
     if (fullCup.checked === true) {
       drinkSizeQ.style.display = "none";
-      rushBody.style.display = "block";
+      fastBodyQ.style.display = "block";
     } else if (tinySip.checked === true) {
       drinkSizeQ.style.display = "none";
-      answerDiv("espresso");
+      showAnswer("espresso");
     }
   });
-  rushBody.addEventListener("click", () => {
-    if (mediumBody.checked === true) {
-      rushBody.style.display = "none";
-      answerDiv("aeropress");
-    } else if (heavyBody.checked === true) {
-      rushBody.style.display = "none";
-      answerDiv("long black");
+  fastBodyQ.addEventListener("click", () => {
+    if (fastMedium.checked === true) {
+      fastBodyQ.style.display = "none";
+      showAnswer("aeropress");
+    } else if (fastHeavy.checked === true) {
+      fastBodyQ.style.display = "none";
+      showAnswer("long black");
     }
   });
 }
 
-restartBtn.addEventListener("click", () => {
-  document.getElementById("answer").style.display = "none";
-  document.getElementById("rushQ").style.display = "block";
-});
+//execute quizFlow() function when document loads
 
 document.addEventListener("load", quizFlow());
