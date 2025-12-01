@@ -17,6 +17,7 @@ const fastBodyQ = document.getElementById("fastBodyQ");
 const fastMedium = document.getElementById("fastMedium");
 const fastHeavy = document.getElementById("fastHeavy");
 const restartBtn = document.getElementById("restartBtn");
+const answerDiv = document.getElementById("answerDiv");
 
 //function uses string parameter to display answer with correct brewmethod:
 
@@ -24,17 +25,24 @@ function showAnswer(brewmethod) {
   document.getElementById(
     "answer"
   ).innerHTML = `Your brewmethod is: ${brewmethod}!`;
-  document.getElementById("answerDiv").style.display = "block";
+  answerDiv.style.display = "block";
 }
 
 //function restarts quiz so answer gets removed and first question shows:
 
+function clearInputs() {
+  document.querySelectorAll("input").forEach((input) => {
+    input.checked = false;
+  });
+}
+
 restartBtn.addEventListener("click", () => {
+  clearInputs();
+  answerDiv.style.display = "none";
   coffeeQuizChildren.forEach((child) => {
     child.style.display = "none";
   });
   rushQ.style.display = "block";
-  document.getElementById("answerDiv").style.display = "none";
 });
 
 //function uses click event listeners to hide and show questions or display answers,
@@ -44,56 +52,41 @@ function quizFlow() {
   coffeeQuizChildren.forEach((child) => {
     child.addEventListener("click", (e) => {
       e.currentTarget.style.display = "none";
-      /*  rushYes.checked
-        ? (milkyQ.style.display = "block")
-        : (filterBodyQ.style.display = "block");
-
-      filterLight.checked
-        ? showAnswer("pour over")
-        : showAnswer("french press"); */
+      switch (true) {
+        case rushYes.checked:
+          milkyQ.style.display = "block";
+          break;
+        case rushNo.checked:
+          filterBodyQ.style.display = "block";
+          break;
+        case fullCup.checked:
+          fastBodyQ.style.display = "block";
+          break;
+        case milkNo.checked:
+          fastBodyQ.style.display = "block";
+          break;
+        case filterLight.checked:
+          showAnswer("pour over");
+          break;
+        case filterHeavy.checked:
+          showAnswer("french press");
+          break;
+        case milkYes.checked:
+          showAnswer("espresso");
+          break;
+        case tinySip.checked:
+          showAnswer("espresso");
+          break;
+        case fastMedium.checked:
+          showAnswer("aeropress");
+          break;
+        case fastHeavy.checked:
+          showAnswer("long black");
+          break;
+      }
     });
   });
 }
-
-//herhaal voor de rest van de vragen
-
-/*  filterBodyQ.addEventListener("click", () => {
-    if (filterLight.checked === true) {
-      filterBodyQ.style.display = "none";
-      showAnswer("pour over");
-    } else if (filterHeavy.checked === true) {
-      filterBodyQ.style.display = "none";
-      showAnswer("french press");
-    }
-  }); */
-/*   milkyQ.addEventListener("click", () => {
-    if (milkYes.checked === true) {
-      milkyQ.style.display = "none";
-      showAnswer("espresso");
-    } else if (milkNo.checked === true) {
-      milkyQ.style.display = "none";
-      drinkSizeQ.style.display = "block";
-    }
-  });
-  drinkSizeQ.addEventListener("click", () => {
-    if (fullCup.checked === true) {
-      drinkSizeQ.style.display = "none";
-      fastBodyQ.style.display = "block";
-    } else if (tinySip.checked === true) {
-      drinkSizeQ.style.display = "none";
-      showAnswer("espresso");
-    }
-  });
-  fastBodyQ.addEventListener("click", () => {
-    if (fastMedium.checked === true) {
-      fastBodyQ.style.display = "none";
-      showAnswer("aeropress");
-    } else if (fastHeavy.checked === true) {
-      fastBodyQ.style.display = "none";
-      showAnswer("long black");
-    }
-  }); */
-
 //execute quizFlow() function when document loads
 
 document.addEventListener("load", quizFlow());
