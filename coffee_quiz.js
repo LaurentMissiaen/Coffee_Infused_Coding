@@ -1,4 +1,6 @@
 const coffeeQuiz = document.getElementById("coffeeQuiz");
+const coffeeQuizChildren = [...coffeeQuiz.children].slice(1, 6);
+//array met alle children van de coffeeQuiz section
 const rushQ = document.getElementById("rushQ");
 const rushYes = document.getElementById("rushYes");
 const rushNo = document.getElementById("rushNo");
@@ -28,24 +30,34 @@ function showAnswer(brewmethod) {
 //function restarts quiz so answer gets removed and first question shows:
 
 restartBtn.addEventListener("click", () => {
+  coffeeQuizChildren.forEach((child) => {
+    child.style.display = "none";
+  });
+  rushQ.style.display = "block";
   document.getElementById("answerDiv").style.display = "none";
-  document.getElementById("rushQ").style.display = "block";
 });
 
 //function uses click event listeners to hide and show questions or display answers,
 //depending on user input:
 
 function quizFlow() {
-  rushQ.addEventListener("click", () => {
-    if (rushYes.checked === true) {
-      rushQ.style.display = "none";
-      milkyQ.style.display = "block";
-    } else if (rushNo.checked === true) {
-      rushQ.style.display = "none";
-      filterBodyQ.style.display = "block";
-    }
+  coffeeQuizChildren.forEach((child) => {
+    child.addEventListener("click", (e) => {
+      e.currentTarget.style.display = "none";
+      /*  rushYes.checked
+        ? (milkyQ.style.display = "block")
+        : (filterBodyQ.style.display = "block");
+
+      filterLight.checked
+        ? showAnswer("pour over")
+        : showAnswer("french press"); */
+    });
   });
-  filterBodyQ.addEventListener("click", () => {
+}
+
+//herhaal voor de rest van de vragen
+
+/*  filterBodyQ.addEventListener("click", () => {
     if (filterLight.checked === true) {
       filterBodyQ.style.display = "none";
       showAnswer("pour over");
@@ -53,8 +65,8 @@ function quizFlow() {
       filterBodyQ.style.display = "none";
       showAnswer("french press");
     }
-  });
-  milkyQ.addEventListener("click", () => {
+  }); */
+/*   milkyQ.addEventListener("click", () => {
     if (milkYes.checked === true) {
       milkyQ.style.display = "none";
       showAnswer("espresso");
@@ -80,8 +92,7 @@ function quizFlow() {
       fastBodyQ.style.display = "none";
       showAnswer("long black");
     }
-  });
-}
+  }); */
 
 //execute quizFlow() function when document loads
 
