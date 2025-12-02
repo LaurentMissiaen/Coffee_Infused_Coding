@@ -1,6 +1,5 @@
 const coffeeQuiz = document.getElementById("coffeeQuiz");
 const coffeeQuizChildren = [...coffeeQuiz.children].slice(1, 6);
-//array met alle children van de coffeeQuiz section
 const rushQ = document.getElementById("rushQ");
 const rushYes = document.getElementById("rushYes");
 const rushNo = document.getElementById("rushNo");
