@@ -96,6 +96,75 @@
             <p><span>Water temperature:</span><span id="water-temp">–</span></p>
           </div>
         </div>
+        <div id="coffeeQuiz">
+          <h2>Coffee Quiz</h2>
+
+          <div id="rushQ">
+            <h3>Question:</h3>
+            <p>Are you in a rush?</p>
+            <label>
+              <input type="radio" name="radio" id="rushYes" />
+              yes
+            </label>
+            <label>
+              <input type="radio" name="radio" id="rushNo" />
+              no
+            </label>
+          </div>
+          <div id="milkyQ" style="display: none">
+            <h3>Question:</h3>
+            <p>Would you like a milky drink (e.g. cappuccino, flat white)?</p>
+            <label>
+              <input type="radio" name="radio" id="milkYes" />
+              yes please!
+            </label>
+            <label>
+              <input type="radio" name="radio" id="milkNo" />
+              nope, I'm way too cool for milky drinks!
+            </label>
+          </div>
+          <div id="filterBodyQ" style="display: none">
+            <h3>Question:</h3>
+            <p>Light, or heavy bodied coffee?</p>
+            <label>
+              <input type="radio" name="radio" id="filterLight" />
+              light
+            </label>
+            <label>
+              <input type="radio" name="radio" id="filterHeavy" />
+              heavy
+            </label>
+          </div>
+          <div id="drinkSizeQ" style="display: none">
+            <h3>Question:</h3>
+            <p>Full cup or tiny sip?</p>
+            <label>
+              <input type="radio" name="radio" id="fullCup" />
+              Full cup please!
+            </label>
+            <label>
+              <input type="radio" name="radio" id="tinySip" />
+              Remember, in a rush! Tiny sip please!
+            </label>
+          </div>
+          <div id="fastBodyQ" style="display: none">
+            <h3>Question:</h3>
+            <p>Medium or Heavy body?</p>
+            <label>
+              <input type="radio" name="radio" id="fastMedium" />
+              medium body
+            </label>
+            <label>
+              <input type="radio" name="radio" id="fastHeavy" />
+              heavy body
+            </label>
+          </div>
+          <div id="answerDiv" style="display: none">
+            <h3>Answer:</h3>
+            <p id="answer"></p>
+          </div>
+          <button id="restartBtn" class="btn">restart</button>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -103,5 +172,6 @@
     </footer>
     <script src="app.js"></script>
     <script src="brew_ratio_calculator.js"></script>
+    <script src="coffee_quiz.js"></script>
   </body>
 </html>
