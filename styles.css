@@ -63,6 +63,7 @@ h1 {
   font-size: var(--font-2xl);
   margin-bottom: var(--space-md);
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
@@ -496,6 +497,12 @@ article {
   border-bottom: 0.2rem solid var(--grey-medium);
   display: flex;
   justify-content: space-between;
+}
+
+#coffeeQuiz {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* === MEDIA QUERIES === */
