@@ -41,7 +41,7 @@ restartBtn.addEventListener("click", () => {
   coffeeQuizChildren.forEach((child) => {
     child.style.display = "none";
   });
-  rushQ.style.display = "block";
+  rushQ.style.display = "flex";
 });
 
 //function uses click event listeners to hide and show questions or display answers,
@@ -51,18 +51,19 @@ function quizFlow() {
   coffeeQuizChildren.forEach((child) => {
     child.addEventListener("click", (e) => {
       e.currentTarget.style.display = "none";
+      child.classList.add("question");
       switch (true) {
         case rushYes.checked:
-          milkyQ.style.display = "block";
+          milkyQ.style.display = "flex";
           break;
         case rushNo.checked:
-          filterBodyQ.style.display = "block";
+          filterBodyQ.style.display = "flex";
           break;
         case fullCup.checked:
-          fastBodyQ.style.display = "block";
+          fastBodyQ.style.display = "flex";
           break;
         case milkNo.checked:
-          fastBodyQ.style.display = "block";
+          fastBodyQ.style.display = "flex";
           break;
         case filterLight.checked:
           showAnswer("pour over");

@@ -440,6 +440,8 @@ article {
 
 /* === TOOLS === */
 
+/* coffee calculator */
+
 .calculator {
   display: flex;
   align-items: center;
@@ -499,9 +501,18 @@ article {
   justify-content: space-between;
 }
 
+/* coffee quiz */
+
 #coffeeQuiz {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.question {
+  display: flex;
+  align-items: flex-start;
   flex-direction: column;
 }
 
