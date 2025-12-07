@@ -241,6 +241,8 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
 }
 
 button {
@@ -493,6 +495,7 @@ article {
   width: 5rem;
   height: 5rem;
   margin-left: var(--space-sm);
+  margin-top: var(--space-lg);
 }
 
 .result p {
@@ -660,9 +663,10 @@ article {
 
 @media (min-width: 60rem) {
   /* index */
+
   .hero__info {
     flex-direction: row;
-    max-width: 60%;
+    max-width: 45rem;
     gap: 4rem;
   }
   .hero h1 {
@@ -697,8 +701,8 @@ article {
 @media (min-width: 72rem) {
   /* index */
   .services__links {
-    flex-direction: row;
-    max-width: 80rem;
+    /* flex-direction: row; */
+    max-width: 75rem;
     margin: 0 auto;
   }
 
