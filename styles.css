@@ -693,7 +693,9 @@ article {
     max-width: 60%;
   }
   .services__links {
+    margin: 0 auto;
     margin-bottom: var(--space-lg);
+    max-width: 60rem;
   }
 
   /* guides */
@@ -707,8 +709,7 @@ article {
 @media (min-width: 72rem) {
   /* index */
   .services__links {
-    /* flex-direction: row; */
-    max-width: 75rem;
+    max-width: 60rem;
     margin: 0 auto;
   }
 
