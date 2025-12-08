@@ -50,6 +50,7 @@ body {
 
 main {
   max-width: 70rem;
+  border: none;
 }
 
 .to-top {
@@ -59,6 +60,7 @@ main {
 section {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
+  border: none;
 }
 
 h1 {
