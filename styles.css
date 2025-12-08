@@ -241,8 +241,8 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
 }
 
 button {
@@ -254,7 +254,6 @@ button {
 
 .services {
   background-color: var(--olive-green);
-  padding-bottom: var();
 }
 
 .services h2 {
@@ -661,13 +660,18 @@ article {
 
 /* mobile first approach (rest of the website) */
 
-@media (min-width: 60rem) {
+@media (min-width: 50rem) {
   /* index */
 
   .hero__info {
     flex-direction: row;
     max-width: 45rem;
     gap: 4rem;
+  }
+
+  .hero__info img {
+    max-width: 25rem;
+    max-height: 25rem;
   }
   .hero h1 {
     margin-top: var(--space-lg);
@@ -679,6 +683,8 @@ article {
     align-items: baseline;
     margin-top: var(--space-xl);
     margin-bottom: var(--space-xl);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
   }
   .hero__info button {
     width: fit-content;
