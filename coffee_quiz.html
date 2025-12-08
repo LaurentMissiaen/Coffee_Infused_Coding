@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Barlow Semi Condensed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tools</title>
+  </head>
+  <body>
+    <nav class="navbar" id="top">
+      <div class="nav_content">
+        <span class="logo"
+          ><a href="index.html"
+            ><span>coffee</span><span>infused</span><span>coding</span></a
+          ></span
+        >
+        <button
+          class="hamburger"
+          aria-label="toggle menu"
+          aria-expanded="false"
+          aria-controls="nav_list"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav_list" id="nav_list">
+          <li class="nav_item"><a href="brew_guides.html">guides</a></li>
+          <li class="nav_item"><a href="tools.html">tools</a></li>
+          <li class="nav_item">spots</li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <a class="to-top" href="#top" aria-label="back tot top"
+        ><img
+          id="top_arrow"
+          src="Images/icons_imgs/up-arrow.png"
+          alt="up arrow"
+      /></a>
+      <!-- COFFEE QUIZ -->
+      <div id="coffeeQuiz">
+        <h1>Coffee Quiz</h1>
+
+        <div id="rushQ" class="question">
+          <h3>Question:</h3>
+          <p>Are you in a rush?</p>
+          <label>
+            <input type="radio" name="radio" id="rushYes" />
+            yes
+          </label>
+          <label>
+            <input type="radio" name="radio" id="rushNo" />
+            no
+          </label>
+        </div>
+        <div id="milkyQ" class="question" style="display: none">
+          <h3>Question:</h3>
+          <p>Would you like a milky drink (e.g. cappuccino, flat white)?</p>
+          <label>
+            <input type="radio" name="radio" id="milkYes" />
+            yes please!
+          </label>
+          <label>
+            <input type="radio" name="radio" id="milkNo" />
+            nope, I'm way too cool for milky drinks!
+          </label>
+        </div>
+        <div id="filterBodyQ" class="question" style="display: none">
+          <h3>Question:</h3>
+          <p>Light, or heavy bodied coffee?</p>
+          <label>
+            <input type="radio" name="radio" id="filterLight" />
+            light
+          </label>
+          <label>
+            <input type="radio" name="radio" id="filterHeavy" />
+            heavy
+          </label>
+        </div>
+        <div id="drinkSizeQ" class="question" style="display: none">
+          <h3>Question:</h3>
+          <p>Full cup or tiny sip?</p>
+          <label>
+            <input type="radio" name="radio" id="fullCup" />
+            Full cup please!
+          </label>
+          <label>
+            <input type="radio" name="radio" id="tinySip" />
+            Remember, in a rush! Tiny sip please!
+          </label>
+        </div>
+        <div id="fastBodyQ" class="question" style="display: none">
+          <h3>Question:</h3>
+          <p>Medium or Heavy body?</p>
+          <label>
+            <input type="radio" name="radio" id="fastMedium" />
+            medium body
+          </label>
+          <label>
+            <input type="radio" name="radio" id="fastHeavy" />
+            heavy body
+          </label>
+        </div>
+        <div id="answerDiv" style="display: none">
+          <h3>Answer:</h3>
+          <p id="answer"></p>
+        </div>
+        <button id="restartBtn" class="btn">restart</button>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 - coffee infused coding, All Rights Reserved</p>
+    </footer>
+    <script src="app.js"></script>
+    <script src="coffee_quiz.js"></script>
+  </body>
+</html>
