@@ -16,6 +16,9 @@ html {
 body {
   font-family: Barlow Semi Condensed, sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* === CUSTOM PROPERTIES === */
@@ -46,7 +49,6 @@ body {
 /* === SITE WIDE === */
 
 main {
-  margin: 0 auto;
   max-width: 70rem;
 }
 
@@ -205,6 +207,7 @@ a {
   display: flex;
   justify-content: center;
   padding: 3rem;
+  margin-top: auto;
 }
 
 /* === INDEX === */
